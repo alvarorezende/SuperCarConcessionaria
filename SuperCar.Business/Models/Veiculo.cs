@@ -1,12 +1,9 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
 
 namespace SuperCar.Business.Models
 {
-	public class Veiculo
+	public class Veiculo : Entity
 	{
-		public Guid VeiculoId { get; set; }
-
 		public string Placa { get; set; }
 
 		public string Modelo { get; set; }
