@@ -10,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using SuperCar.App.Data;
 using SuperCar.Data.Context;
 using Microsoft.EntityFrameworkCore.Design;
+using SuperCar.Business.Interfaces;
+using SuperCar.Data.Repository;
 
 namespace SuperCar.App
 {
@@ -45,6 +47,9 @@ namespace SuperCar.App
 				.AddEntityFrameworkStores<ApplicationDbContext>();
 
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+			services.AddScoped<MeuDbContext>();
+			services.AddScoped<IVeiculoRepository, VeiculoRepository>();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
